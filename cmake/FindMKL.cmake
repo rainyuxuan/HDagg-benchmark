@@ -17,7 +17,7 @@
 find_path(MKL_PERFIX
         NAMES include/mkl.h
         PATHS $ENV{MKLROOT}
-        HINTS /home/behrooz/intel/oneapi/mkl/latest /media/behrooz/Field/intel/mkl
+        HINTS /opt/intel/mkl
         )
 
 #compiler/2021.1.1/linux/compiler/lib/intel64_lin
@@ -82,7 +82,8 @@ find_library(IOMP5 NAMES iomp5 HINTS
         ${MKL_PERFIX}/../../compiler/latest/linux/compiler/lib/intel64
         ${MKL_PERFIX}/../compilers_and_libraries/linux/lib/intel64
         ${MKL_PERFIX}/../../../compilers_and_libraries/linux/lib/intel64
-        ${HILTIDEPS}/lib)
+        ${HILTIDEPS}/lib
+        /opt/intel/oneapi/compiler/latest/linux/compiler/lib/intel64_lin)
 if (IOMP5)
     message(STATUS "Found iomp5: ${IOMP5}")
 else ()
