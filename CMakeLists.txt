@@ -55,6 +55,7 @@ file(GLOB SRCFILES
         "src/profiler/*.cpp"
         "src/sparse_blas/*.cpp"
         "src/utils/*.cpp"
+        "src/utils/*.hpp"
         "src/utils/external/MatrixMarketIO/*.cpp"
         )
 

@@ -158,8 +158,8 @@ int main(int argc, char *argv[]) {
                                             Parameter_headers, false);
 #endif
 
-  auto tmp = make_full(Lower_A_CSC);
-  auto CSR_A = csc_to_csr(tmp);
+  auto tmp1 = make_full(Lower_A_CSC);
+  auto CSR_A = csc_to_csr(tmp1);
 
   std::vector<int> Cores;
   if(nthreads == -1){
@@ -217,6 +217,7 @@ int main(int argc, char *argv[]) {
 
     runtime_csv.addRecord();
   }
+  return 0;
 #ifdef SPMP
   //"********************* LL Levelset *********************"
   for (auto &core : Cores) {
@@ -551,7 +552,7 @@ int main(int argc, char *argv[]) {
   }
 #endif
 
-  delete tmp;
+  delete tmp1;
   delete CSR_A;
   delete[] y_correct;
   delete Lower_A_CSR;
